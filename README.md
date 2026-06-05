@@ -54,3 +54,15 @@ The user asked a completely normal question. The agent ignored the real answer a
 ---
 
 *Learning in public. Every mistake documented. Every breakthrough shared.*
+Day 2: Built and tested 3 defenses against indirect prompt injection
+
+Defense results:
+- Defense 1 (keyword blocklist): FAILED — bypassed by rephrasing attack
+- Defense 2 (clear labeling / XML structure): PASSED — blocked both attacks
+- Defense 3 (output validation): PASSED — final layer catches bypass attempts
+- All 3 combined: correctly blocked attack, correctly answered safe query
+
+Key learning: keyword blocklists give false confidence. Clear prompt structure gives the model a real trust boundary. Defense in depth = stack imperfect layers.
+
+Tools: Python, google-generativeai, Google Colab (free tier)
+File: day2_defense.ipynb
